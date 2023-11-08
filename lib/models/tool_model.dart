@@ -13,10 +13,14 @@ class ToolModel {
   @HiveField(2)
   int? toolCount;
 
-  ToolModel({this.toolId, this.toolName, this.toolCount});
+  @HiveField(3)
+  String? toolImage;
+
+  ToolModel({this.toolId, this.toolName, this.toolCount, this.toolImage});
   factory ToolModel.fromJson(Map<String, dynamic> json) => ToolModel(
         toolId: json["toolId"],
         toolName: json["toolName"],
         toolCount: json["toolCount"],
-    );
+        toolImage: json["toolImage"],
+      );
 }

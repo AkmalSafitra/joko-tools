@@ -11,4 +11,8 @@ class FriendModel {
   String? friendName;
 
   FriendModel({this.friendId, this.friendName});
+  factory FriendModel.fromJson(Map<String, dynamic> json) => FriendModel(
+        friendId: json["friendId"],
+        friendName: json["friendName"],
+      );
 }

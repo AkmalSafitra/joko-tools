@@ -13,5 +13,14 @@ class LendModel {
   @HiveField(2)
   int? friendId;
 
-  LendModel({this.lendId, this.toolId, this.friendId});
+  @HiveField(3)
+  int? toolCount;
+
+  LendModel({this.lendId, this.toolId, this.friendId, this.toolCount});
+  factory LendModel.fromJson(Map<String, dynamic> json) => LendModel(
+        lendId: json["lendId"],
+        toolId: json["toolId"],
+        friendId: json["friendId"],
+        toolCount: json["toolCount"],
+      );
 }
